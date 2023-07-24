@@ -211,7 +211,7 @@ _Answer Q6 with a numeric_
 ## STRETCH  (No points)  Android Studio Debugging
 In debugging we put break points in either source or compiled code to examine the stack/register/memory at that point in program execution.
 
-Android Studio debugging resolves to _smali_ code without using additional tools or extensions. While _smali_ code is not source code it'll due for us to use it for our breakpoints
+Android Studio debugging resolves to _smali_ code without using additional tools or extensions. While _smali_ code is not source code it will do for us to use it for our breakpoints
 
 Thankfully Android caters to debugging pre-built APKs: https://developer.android.com/studio/debug/apk-debugger
 All we have to do is open the `artifact/cookiemccount-debug.apk` in Android Studio.
