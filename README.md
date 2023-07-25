@@ -214,7 +214,7 @@ In debugging we put break points in either source or compiled code to examine th
 Android Studio debugging resolves to _smali_ code without using additional tools or extensions. While _smali_ code is not source code it will do for us to use it for our breakpoints
 
 Thankfully Android caters to debugging pre-built APKs: https://developer.android.com/studio/debug/apk-debugger
-All we have to do is open the `artifact/cookiemccount-debug.apk` in Android Studio.
+All we have to do is once again use the  `Profile or Debug APK` method to open the `artifact/cookiemccount-debug.apk` in Android Studio.
 
 1. You will need to attach java source code to debug
    1. Click on decompiled _smali_ files to see an option to attach the provided java code
