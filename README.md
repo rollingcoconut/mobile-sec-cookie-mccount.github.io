@@ -4,12 +4,12 @@ During our class lectures we covered the _Android_ & _IOS_ application architect
 
 This exercise takes these theoretical concepts and applies them in a practical context, providing a hands-on learning experience that reinforces the lecture material. Through static analysis and reverse engineering students get to experience first-hand how data can leak through bad coding practices or how the lack of proper encryption can lead to vulnerabilities.
 
-Through debugging, code review, and APK analysis, students will gain practical skills that are critical for a mobile/Android application security assessment, which echoes the lecture's focus on mobile security.
+Through code review and APK analysis, students will gain practical skills that are critical for a mobile/Android application security assessment, which echoes the lecture's focus on mobile security.
 
 ## Help CookieMcCount eat 1 Million cookies 
 The primary objective of this exercise is to provide students with practical exposure to various aspects of Android application security. This includes areas such as static analysis, dynamic analysis, and APK verification.
 
-The exercise revolves around the investigation of a sample APK file of a game, `CookieMcCount`, which tracks the number of cookies a player "eats". You are tasked with understanding the inner workings of the game through reverse engineering, APK analysis, and debugging in Android Studio. The ultimate goal is to uncover hidden values -- _CODES_ --  related to the game's mechanics.
+The exercise revolves around the investigation of a sample APK file of a game, `CookieMcCount`, which tracks the number of cookies a player "eats". You are tasked with understanding the inner workings of the game through reverse engineering, APK analysis, and manifest examination in Android Studio. The ultimate goal is to uncover hidden values -- _CODES_ --  related to the game's mechanics.
 
 The exercise is broken down into several parts, each focusing on different aspects:
 
@@ -21,7 +21,6 @@ _You do NOT need to have prior Android Studio knowledge or smali code knowledge.
 
 `Part 3` prompts you to examine the application's `AndroidManifest.xml` file to understand important aspects of the app's configuration.
 
-The `STRETCH` section, while not mandatory, encourages you to delve deeper into Android debugging, using breakpoints to examine the application's behavior at specific points during execution.
 
 ### Assignment Breakdown
 * All the important source code (`MainActivity.java` and `EncryptUtil.java`), as well as the _.apk_ is provided in the `artifacts` directory
@@ -69,7 +68,7 @@ The `cookiemccount-vX.apk` was created in `testOnly` mode and signed with Androi
   * _Using the `apksigner` tool to verify the certs is reccommended but not required for the assignment_
   
   ```sh
-    <STUDIO_INSTALL_PATH>/Android/Sdk/build-tools/<VERSION>/apksigner verify --print-certs cookiemccount-debug.apk`
+    <STUDIO_INSTALL_PATH>/Android/Sdk/build-tools/<VERSION>/apksigner verify --print-certs cookiemccount-vX.apk`
     Signer #1 certificate DN: C=US, O=Android, CN=Android Debug
     Signer #1 certificate SHA-256 digest: 5fadcbd3e27e7531f30d309164d5489201c9128e29f55630a2a8622cde0870d3
     Signer #1 certificate SHA-1 digest: f22869bdb06df21c548862cd08a2f61f6ce24c0b
@@ -84,7 +83,7 @@ This utility is built into most OS'
 ```sh
 openssl dgst -sha256 cookiemccount-vX.apk                          # MacOs
 
-sha256sum cookiemccount-debug.apk                                     # Linux
+sha256sum cookiemccount-xK.apk                                     # Linux
 
 CertUtil -hashfile  <PATH to cookiemccount-vX.apk>  SHA256         # Windows 
 ```
@@ -99,9 +98,9 @@ _NOTE #1: Match the sha256 digest of your apk against `artifacts/sha256.txt`. Th
 ## PART I (50 points) 
 Eat _how many_ cookies get  the __STATIC_CODE__?
 
-<img src="gifs/app_encouragement_code_no_giveaway.gif" alt="Just get 10 cookies first"  height="550" >
+<img src="gifs/v2_interaction.gif" alt="Just get 10 cookies first"  height="550" >
 
-The `cookiemccount-debug.apk` is a simple Android Button app where 1 click helps the CookieMcCount eat 1 cookie. 
+The `cookiemccount-vX.apk` is a simple Android Button app where 1 click helps the CookieMcCount eat 1 cookie. 
 You are rewarded with a code when CookieMcCount consumes the following number of cookies:
 * `10` 
 * Some `unknown number` > 0 and < 1 million   (the `unknown number` is also referred to as the `STATIC COUNT`)
@@ -149,10 +148,10 @@ _HINT #2_
 
 ## PART II (10 points) Emulate! ENGAGEMENT_CODE
 
-### Open Debug APK in Studio
+### Open APK in Studio
 
 * Android caters to running/debugging pre-built APKs: https://developer.android.com/studio/debug/apk-debugger
-* All we have to do is open the `artifact/cookiemccount-debug.apk` in Android Studio.
+* All we have to do is open the `artifact/cookiemccount-vK.apk` in Android Studio.
 * The actions to click are: `Welcome > More Actions > Profile or Debug APK`
 
 _NOTE:_ If it is your first time using `Android Studio` be sure to follow the wizard to install Android SDKs (v 34 is recc). 
@@ -226,8 +225,8 @@ __Android Components__
   * Restarting your machine might also help as that will kill any daemon processes
   * https://stackoverflow.com/questions/73083632/how-to-fix-waiting-for-target-device-to-come-online 
 
-* `cookiemccount{1..10}-debug.apk` and `cookiemccount-debug.apk` are used interchangably in the gifs
+* `cookiemccount{1..10}-vK.apk` and `cookiemccount-vK.apk` are used interchangably in the gifs
 
-This developer seems a little wonky :(  
-Those `Note to self` comments seem really problematic... 
+* The static code files `MainActivity.java` and `MainActivity.smali` will likely not match the binary as the _.apk_ evolves; they are more than sufficient for learning about smali code however
+
 
