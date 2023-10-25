@@ -98,7 +98,7 @@ _NOTE #1: Match the sha256 digest of your apk against `artifacts/sha256.txt`. Th
 ## PART I (50 points) 
 Eat _how many_ cookies get  the __STATIC_CODE__?
 
-<img src="gifs/v2_interaction.gif" alt="Just get 10 cookies first"  height="550" >
+<img src="gifs/v2_interaction.gif" alt="Just get 10 cookies first" >
 
 The `cookiemccount-vX.apk` is a simple Android Button app where 1 click helps the CookieMcCount eat 1 cookie. 
 You are rewarded with a code when CookieMcCount consumes the following number of cookies:
