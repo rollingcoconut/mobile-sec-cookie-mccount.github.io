@@ -24,19 +24,16 @@ _You do NOT need to have prior Android Studio knowledge or smali code knowledge.
 The `STRETCH` section, while not mandatory, encourages you to delve deeper into Android debugging, using breakpoints to examine the application's behavior at specific points during execution.
 
 ### Assignment Breakdown
-* All the important source code (`MainActivity.java` and `EncryptUtil.java`), as well as the debuggable _.apk_ is provided in the `artifacts` directory
+* All the important source code (`MainActivity.java` and `EncryptUtil.java`), as well as the _.apk_ is provided in the `artifacts` directory
 
 __PART 1__
 * 50/100 points can be achieved with static analysis of the provided _smali_ and _java_ source code files
  
 __PART 2__
-* 10/100 points can be achieved by engaging with the `artifacts/cookiemccount-debug.apk` in an emulator 
+* 10/100 points can be achieved by engaging with the `artifacts/cookiemccount-vX.apk` in an emulator 
 
 __PART 3__
 * 40/100 points can be achieved by opening the `.apk` in `Android Studio` to read the `AndroidManifest.xml`
-
-__STRETCH__
-* 0 points are required for a juicy `DYNAMIC_CODE` available to those who choose to debug the _.apk_. As this is a `STRETCH` section no TA and professor resources will be prioritized for it
 
 _NOTES_
 * The Android Studio emulator is a development tool that can have delays and lags. 
@@ -62,9 +59,9 @@ Once you have successfully installed  `Android Studio` please review the command
 
 In particular `apksigner`: [https://developer.android.com/tools](https://developer.android.com/tools)
 
-### Verify `artifacts/cookiemccount-debug.apk`
+### Verify `artifacts/cookiemccount-vX.apk`
 
-The `cookiemccount-debug.apk` was created in `testOnly` mode and signed with AndroidStudio [debug certificate](https://developer.android.com/studio/publish/app-signing#debug-mode).
+The `cookiemccount-vX.apk` was created in `testOnly` mode and signed with AndroidStudio [debug certificate](https://developer.android.com/studio/publish/app-signing#debug-mode).
 
 #### Verify the apk with `apksigner`. 
 
@@ -85,11 +82,11 @@ This utility is built into most OS'
 
 
 ```sh
-openssl dgst -sha256 cookiemccount-debug.apk                          # MacOs
+openssl dgst -sha256 cookiemccount-vX.apk                          # MacOs
 
 sha256sum cookiemccount-debug.apk                                     # Linux
 
-CertUtil -hashfile  <PATH to cookiemccount-debug.apk>  SHA256         # Windows 
+CertUtil -hashfile  <PATH to cookiemccount-vX.apk>  SHA256         # Windows 
 ```
 
 <img src="gifs/final_hash.gif" alt="Verify APK">
@@ -187,16 +184,14 @@ _Answer Q3/Q4/Q5 with either `Yes` or `No`_
 _Answer Q6 with a numeric_
 
 ### Q3. (10 points) 
-* Without modifying the AVD emulator's default settings is the `CookieMcCount` app initially allowed to access the device's `Calendar`? 
-
+* Is it required for the user to grant the `POST_NOTIFICATIONS` permission to the app each time the app is opened? 
   * _HINT 1: You can confirm your answer by navigating to `Settings > Permissions` on the virtual device, just as you would on a physical Android._
   * _HINT 2: [https://www.geeksforgeeks.org/what-are-the-different-protection-levels-in-android-permission/](https://www.geeksforgeeks.org/what-are-the-different-protection-levels-in-android-permission/)_
 
 ### Q4. (10 points)
-* According to the `AndroidManfiest.xml` does the `CookieMcCount` app define any custom permissions? 
+* What is the protection level of the `POST_NOTIFICATIONS` permission? 
+  * _HINT 1: [https://developer.android.com/reference/android/Manifest.permission](https://developer.android.com/reference/android/Manifest.permission)_
 
-  * _HINT 1: [https://developer.android.com/guide/topics/permissions/defining.html](https://developer.android.com/guide/topics/permissions/defining.html)_
-  * _HINT 2:(_Instances of `<permission android:name="unlisted.cookiemccount.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION...>"` are auto-generated and should be ignored for this question_)_
 
 ### Q5. (10 points) 
 * According to the `AndroidManifest.xml` does the `CookieMcCount` app run any `Services`?
@@ -207,34 +202,6 @@ _Answer Q6 with a numeric_
 * According to the `AndroidManifest.xml` what is the minimum SDK required to run `CookieMcCount`?
 
 
-
-## STRETCH  (No points)  Android Studio Debugging
-In debugging we put break points in either source or compiled code to examine the stack/register/memory at that point in program execution.
-
-Android Studio debugging resolves to _smali_ code without using additional tools or extensions. While _smali_ code is not source code it will do for us to use it for our breakpoints
-
-Thankfully Android caters to debugging pre-built APKs: https://developer.android.com/studio/debug/apk-debugger
-All we have to do is once again use the  `Profile or Debug APK` method to open the `artifact/cookiemccount-debug.apk` in Android Studio.
-
-1. You will need to attach java source code to debug
-   1. Click on decompiled _smali_ files to see an option to attach the provided java code
-   2. _Attach_ the modified java code to the decompiled _smali_; you can just attach the entire `artifacts` directory, the IDE will pick up the relevant files
-2. Putting some breakpoints at `onClick` and `onCreate` seem promising
-3. Android Studio can be a heavy application; stepping into too many functions can cause the emulator to halt for periods of time. (_3-4 minute halts are sadly not uncommon_)
-4. Being aware of how to step-out-of functions, as well as force-step into them are helpful for debugging
-
-Before debugging, it might help to `Wipe Data` from the device first. 
-
-We provide a very helpful gif for this part, but you need to decrypt it with the `STATIC_COUNT` in order to view it 
-
-[attach_and_debug.gif.gpg](https://github.com/rollingcoconut/mobile-sec-cookie-mccount.github.io/blob/main/gifs/attach_and_debug.gif.gpg)
-
-```sh
-    # use the numeric you discovered to be `STATIC_COUNT` in order to decrypt the helpful gig 
-    gpg --output attach_and_debug.gif -d attach_and_debug.gif.gpg        
-```
-
-<img src="gifs/attach_and_debug.gif" alt="attach_and_debug.gif"  >
 
 
 
