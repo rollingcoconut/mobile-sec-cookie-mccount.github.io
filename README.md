@@ -178,7 +178,7 @@ Just click 10x to get the `ENGAGEMENT_CODE`!
 
 ## PART III (40 points) Manifest!
 
-_Answer Q3/Q4/Q5 with either `Yes` or `No`_
+_Answer Q3/Q5 with either `Yes` or `No`_
 
 _Answer Q6 with a numeric_
 
