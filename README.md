@@ -184,7 +184,7 @@ _Answer Q6 with a numeric_
 
 ### Q3. (10 points) 
 * To have continued notifications from the app is it required for the user to grant the `POST_NOTIFICATIONS` permission to the app each time the app is opened? 
-  * _HINT 1: You can confirm your answer by navigating to `Settings > Permissions` on the virtual device, just as you would on a physical Android._
+  * _HINT 1: You can confirm your answer by navigating to `Settings > Notifications` on the virtual device, just as you would on a physical Android._
   * _HINT 2: [https://www.geeksforgeeks.org/what-are-the-different-protection-levels-in-android-permission/](https://www.geeksforgeeks.org/what-are-the-different-protection-levels-in-android-permission/)_
 
 ### Q4. (10 points)
