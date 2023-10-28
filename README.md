@@ -6,7 +6,7 @@ This exercise takes these theoretical concepts and applies them in a practical c
 
 Through code review and APK analysis, students will gain practical skills that are critical for a mobile/Android application security assessment, which echoes the lecture's focus on mobile security.
 
-## Help CookieMcCount eat 1 Million cookies 
+## Help CookieMcCount eat cookies!
 The primary objective of this exercise is to provide students with practical exposure to various aspects of Android application security. This includes areas such as static analysis, dynamic analysis, and APK verification.
 
 The exercise revolves around the investigation of a sample APK file of a game, `CookieMcCount`, which tracks the number of cookies a player "eats". You are tasked with understanding the inner workings of the game through reverse engineering, APK analysis, and manifest examination in Android Studio. The ultimate goal is to uncover hidden values -- _CODES_ --  related to the game's mechanics.
@@ -22,6 +22,7 @@ _You do NOT need to have prior Android Studio knowledge or smali code knowledge.
 `Part 3` prompts you to examine the application's `AndroidManifest.xml` file to understand important aspects of the app's configuration.
 
 
+
 ### Assignment Breakdown
 * All the important source code (`MainActivity.java` and `EncryptUtil.java`), as well as the _.apk_ is provided in the `artifacts` directory
 
@@ -33,6 +34,9 @@ __PART 2__
 
 __PART 3__
 * 40/100 points can be achieved by opening the `.apk` in `Android Studio` to read the `AndroidManifest.xml`
+
+__STRETCH__
+* 0 points. There is a `DYNAMIC_CODE` achieved when 1 million cookies are consumed. No points are awarded for the optional part of the exercise, and no TA resources are spent towards supporting it. It is completely optional for students wishing to gain experience with debugging tooling :) 
 
 _NOTES_
 * The Android Studio emulator is a development tool that can have delays and lags. 
