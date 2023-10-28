@@ -36,7 +36,7 @@ __PART 3__
 * 40/100 points can be achieved by opening the `.apk` in `Android Studio` to read the `AndroidManifest.xml`
 
 __STRETCH__
-* 0 points. There is a `DYNAMIC_CODE` achieved when 1 million cookies are consumed. No points are awarded for the optional part of the exercise, and no TA resources are spent towards supporting it. It is completely optional for students wishing to explore on their own dynamic reversing tools like debuggers. 
+* 0 points. There is a `DYNAMIC_CODE` achieved when 1 million cookies are consumed. No points are awarded for the optional part of the exercise, and no class resources are spent towards supporting it. It is completely optional for students wishing to explore on their own dynamic reversing tools like debuggers. 
 
 _NOTES_
 * The Android Studio emulator is a development tool that can have delays and lags. 
