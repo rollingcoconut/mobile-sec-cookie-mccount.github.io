@@ -42,7 +42,7 @@ _NOTES_
 * The Android Studio emulator is a development tool that can have delays and lags. 
   * This assignment serves as a gentle introduction to the tool where the value lies in the exposure to functionality
   * Patience is required while using the emulator
-* The `mobile-sec-cookie-mccount-artifacts-v<X>` directory (colloquially called `artifacts`) will be provided in the course LMS. 
+* The `mobile-sec-cookie-mccount-artifacts-v<X>` directory (colloquially called `artifacts`) will be provided on the coures Brightspace. 
 
 <!-- GETTING STARTED -->
 ### Recommended Tools 
@@ -155,7 +155,7 @@ _HINT #2_
 ### Open APK in Studio
 
 * Android caters to running/debugging pre-built APKs: https://developer.android.com/studio/debug/apk-debugger
-* All we have to do is open the `artifact/cookiemccount-vK.apk` in Android Studio.
+* All we have to do is open the `artifact/cookiemccount-vX.apk` in Android Studio.
 * The actions to click are: `Welcome > More Actions > Profile or Debug APK`
 
 _NOTE:_ If it is your first time using `Android Studio` be sure to follow the wizard to install Android SDKs (v 34 is recc). 
